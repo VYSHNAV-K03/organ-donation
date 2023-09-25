@@ -1,0 +1,44 @@
+{% extends "dashboard.html" %}
+{% block body %}
+<p class="mb-1 pt-2 text-bold">ViewFeedback</p>
+<body>
+    <form action="/view_feedback" method="POST">
+        <table class="table align-items-center justify-content-center mb-0">
+
+            <tr>
+                <th>
+                    Sl no :
+                </th>
+                <th>
+                    Name :
+                </th>
+
+                <th>
+                    feedback :
+                </th>
+                <th>
+                    Date :
+                </th>
+            </tr>
+            {% for i in data %}
+            <tr>
+                <td>
+                    {{ loop.index }}
+                </td>
+                <td>
+                    {{ i["name"] }}
+                </td>
+
+                <td>
+                    {{ i["feedback"] }}
+                </td>
+                <td>
+                    {{ i["date"] }}
+                </td>
+            </tr>
+            {% endfor %}
+
+        </table>
+    </form>
+</body>
+{%endblock%}

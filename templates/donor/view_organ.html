@@ -1,0 +1,58 @@
+{% extends "donor/dashboard.html" %}
+{% block body %}
+<p class="mb-1 pt-2 text-bold"> hair</p>
+
+<body>
+
+
+        <table class="table align-items-center justify-content-center mb-0">
+
+
+            <tr>
+                <th>
+                    Sl no :
+                </th>
+                <th>
+                    hairtype :
+                </th>
+
+                <th>
+                    Description :
+                </th>
+
+
+
+
+                <th></th>
+            </tr>
+
+            {% for i in data %}
+            <tr>
+
+                <td>
+                    {{ loop.index }}
+                </td>
+                <td>
+                    {{ i["organ"] }}
+                </td>
+
+             <td>
+                    {{ i["description"] }}
+                </td>
+
+
+
+                <td>
+                    <br>
+
+
+                    <a href="/send_willing?id={{ i["id"] }}" class="btn btn-danger">Send Willingness</a>
+
+                </td>
+            </tr>
+            {% endfor %}
+
+        </table>
+
+</body>
+{%endblock%}

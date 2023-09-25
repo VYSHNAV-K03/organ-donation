@@ -1,0 +1,103 @@
+{% extends "patient/dashboard.html" %}
+{% block body %}
+<p class="mb-1 pt-2 text-bold">View Donor</p>
+<body>
+    <form action="" method="POST">
+     <table class="table align-items-center justify-content-center mb-0">
+
+
+            <tr>
+                <th>
+                    Search :
+                </th>
+
+                 <th>
+                <select name="sel">
+                    <option>---select---</option>
+                    {% for i in data1 %}
+                    <option value="{{ i['id'] }}">{{ i['organ'] }}</option>
+                    {% endfor %}
+                </select>
+                </th>
+
+            <th>
+                <input type="submit" value="Search">
+            </th>
+
+        </table>
+        <table class="table align-items-center justify-content-center mb-0">
+
+
+            <tr>
+                <th>
+                    Sl no :
+                </th>
+                <th>
+                    Name :
+                </th>
+
+                <th>
+                    Address :
+                </th>
+
+                   <th>
+                    Gender :
+                </th>
+
+                   <th>
+                    Age :
+                </th>
+
+                <th>
+                    Phone :
+                </th>
+
+                 <th>
+                    Email :
+                </th>
+
+                <th></th>
+            </tr>
+
+            {% for i in data %}
+            <tr>
+
+                <td>
+                    {{ loop.index }}
+                </td>
+                <td>
+                    {{ i["name"] }}
+                </td>
+                <td>
+                    {{ i["place"] }}, {{ i["post"] }}, {{ i["pin"] }}
+                </td>
+             <td>
+                    {{ i["gender"] }}
+                </td>
+             <td>
+                    {{ i["age"] }}
+                </td>
+                <td>
+                    {{ i["phone"] }}
+                </td>
+                <td>
+                    {{ i["email"] }}
+                </td>
+
+                <td></td>
+
+
+                <td>
+                    <br>
+
+
+                    <a href="/choose_organ?id={{ i["id"] }}" class="btn btn-danger">Send Request</a>
+
+                </td>
+            </tr>
+            {% endfor %}
+
+        </table>
+    </form>
+</body>
+{%endblock%}

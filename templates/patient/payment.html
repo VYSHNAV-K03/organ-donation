@@ -1,0 +1,47 @@
+{% extends "patient/dashboard.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+      <style type="text/css">
+        tr{
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+<form action="" method="post">
+                <h3 align="center"><font color="red" style="font-family: 'Lucida Handwriting'"><u>PAYMENT</u></font></h3>
+
+<table class="table table-light">
+  <tr>
+    <th width="180" scope="row">Account Number</th>
+    <td width="93"><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" class="form-control" required/></td>
+  </tr> <tr>
+    <th width="180" scope="row">Bank Name</th>
+    <td width="93"><label for="textfield5"></label>
+      <input type="text" name="textfield5" id="textfield5"class="form-control" required /></td>
+  </tr>
+  <tr>
+    <th scope="row">IFSC- Code</th>
+    <td><label for="textfield2"></label>
+      <input type="text" name="textfield2" id="textfield2" class="form-control" required/></td>
+  </tr>
+  <tr>
+    <th scope="row">Amount</th>
+    <td><label for="textfield3"></label>
+      <input type="text" name="textfield3" id="textfield3" class="form-control" /></td>
+  </tr>
+  <tr>
+    <td colspan="2" scope="row" align="center"><input type="submit" name="button" id="button" value="Submit" class="btn btn-danger"/></td>
+    </tr>
+</table>
+
+</form>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "patient/dashboard.html" %}
+{% block body %}
+<p class="mb-1 pt-2 text-bold">Add hair</p>
+
+<body>
+    <form action="/send_request" method="POST" enctype="multipart/form-data">
+        <table class="table align-items-center justify-content-center mb-0">
+
+            <tr>
+                <td>
+                    Hair Name :
+                </td>
+                <td>
+                    <select name="select">
+                        <option>--select---</option>
+                        {% for i in data %}
+                       <option value="{{ i['id'] }}">{{ i['organ'] }}</option>
+                       {% endfor %}
+                    </select>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Send Request" class="btn btn-primary">
+                </td>
+            </tr>
+
+        </table>
+    </form>
+</body>
+{%endblock%}

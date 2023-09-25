@@ -1,0 +1,78 @@
+{% extends "dashboard.html" %}
+{% block body %}
+<p class="mb-1 pt-2 text-bold">Willing Donor</p>
+<body>
+    <form action="" method="POST">
+        <table class="table align-items-center justify-content-center mb-0">
+
+
+            <tr>
+                <th>
+                    Sl no :
+                </th>
+                <th>
+                    Name :
+                </th>
+
+                <th>
+                    Address :
+                </th>
+
+                   <th>
+                    Gender :
+                </th>
+
+                   <th>
+                    Age :
+                </th>
+
+                <th>
+                    Phone :
+                </th>
+
+                 <th>
+                    Email :
+                </th>
+
+                 <th>
+                    Hair :
+                </th>
+
+            </tr>
+
+            {% for i in data %}
+            <tr>
+
+                <td>
+                    {{ loop.index }}
+                </td>
+                <td>
+                    {{ i["name"] }}
+                </td>
+                <td>
+                    {{ i["place"] }}, {{ i["post"] }}, {{ i["pin"] }}
+                </td>
+             <td>
+                    {{ i["gender"] }}
+                </td>
+             <td>
+                    {{ i["age"] }}
+                </td>
+                <td>
+                    {{ i["phone"] }}
+                </td>
+                <td>
+                    {{ i["email"] }}
+                </td>
+
+             <td>
+                    {{ i["organ"] }}
+                </td>
+
+            </tr>
+            {% endfor %}
+
+        </table>
+    </form>
+</body>
+{%endblock%}
